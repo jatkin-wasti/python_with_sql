@@ -18,13 +18,21 @@
 - Syntax for declaring a cursor in SQL
 ```
 DECLARE cursor_name CURSOR
-    FOR select_statement;
+    FOR select_statement_here;
 ```
 - After creating the Cursor we have to open it
 ```
 OPEN cursor_name;
 ```
 - We can then use ```FETCH``` to fetch a row from the cursor and put that information into a variable
+- FETCH uses the following 6 methods:
+- ```FIRST```  Used to fetch only the first row from the cursor table
+- ```LAST```   Used to fetch only the last row from the cursor table
+- ```NEXT```   Used to fetch data in a forward direction from the cursor table
+- ```PRIOR```  Used to fetch data in a backwards direction from the cursor table
+- ```ABSOLUTE n``` Used to fetch the exact nth row from cursor table
+- ```RELATIVE n``` Used to fetch the data in an incremental way as well as decremental way
+- An example of a using one of these FETCH methods would be
 ```
 FETCH NEXT FROM cursor INTO variable_list;
 ```
@@ -53,3 +61,8 @@ DEALLOCATE cursor_name;
 pip install pyodbc
 ```
 - Once installed, create a python_sql.py file
+- Of course to use our newly installed module we'll have to import it in our file
+```
+import pyodbc
+```
+- 

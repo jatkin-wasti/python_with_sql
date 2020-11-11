@@ -2,17 +2,17 @@ import pyodbc
 
 
 class PyodbcTask:
-    def __init__(self):
+    def connect(self):
         # We will connect to our Northwind DB which we've already used in the SQL week
         server = "databases1.spartaglobal.academy"
         database = "Northwind"
         username = "**"
-        password = "******"
+        password = "********"
         # Server name, database name, username, and password are required to connect to pyodbc
         northwind_connection = pyodbc.connect(('DRIVER={ODBC Driver 17 for SQL Server};SERVER='
                                                + server + ';DATABASE=' + database + ';UID='
                                                + username + ';PWD=' + password))
-        cursor = northwind_connection.cursor()
+        return northwind_connection
 
     def create_table(self, *args):
         i = 0
@@ -29,7 +29,8 @@ class PyodbcTask:
                 i += 1
 
         sql_query = sql_query.rstrip(sql_query[-1]) + ');'
-        self.cursor.execute(sql_query)
+        cursor = self.connect()
+        cursor.execute(sql_query)
 
     def add_to_table(self, table_name):
         pass

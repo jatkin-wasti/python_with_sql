@@ -4,7 +4,17 @@
 - Python Open Database Connectivity
 - Open source python module that lets us simply access an ODBC database
 ### What is a Cursor and how to use it
-- A cursor is an object that allows us to traverse over the rows of a result set
+**What is a Cursor?**
+- It is a temporary memory station allocated by the DB Server when performing DML operations on a Table
+
+**Implicit Cursors**
+- Allocated by SQL server when the user performs DML operations
+
+**Explicit Cursors**
+- Created by the user when needed
+- Used for fetching data from a table in a row by row manner
+
+#### Using Explicit Cursors
 - Syntax for declaring a cursor in SQL
 ```
 DECLARE cursor_name CURSOR

@@ -10,7 +10,7 @@
 # Importing pyodbc so that we can connect to our SQL database
 import pyodbc
 ```
-**connectivity method**
+**Connectivity Method**
 - We'll create our class and define a method that handles making the connection to our database
 - It will return a cursor so that we can call this method from other methods and make use of it
 ```
@@ -29,7 +29,7 @@ class PyodbcTask:
         cursor = northwind_connection.cursor()
         return cursor
 ```
-**create table method**
+**Create Table Method**
 - We want to make a method that will create a table in our database, but we don't know how many columns the user will
  want to add. So we'll use *args to allow any number of arguments and loop through them to construct our query 
 ```
@@ -61,7 +61,7 @@ class PyodbcTask:
         cursor = self.connect()
         cursor.execute(sql_query)
 ```
-**inserting user input into a table**
+**Inserting User Input Into A Table**
 - This may have been because of DB issues on the day of creation, however the methods were throwing errors when the
  table being inserted into wasn't created in the method doing the insertion. So that's the way it has been
   implemented here
@@ -87,7 +87,7 @@ class PyodbcTask:
 ```
 - As an increment, this could be expanded to add to any table, but currently this only works for inputting data into the
  hardcoded table
- **Basic testing of our class**
+ **Basic Testing Of Our Class**
 - Creating an instance of the class
 ```
 # Creating an instance of our class to run its functionality

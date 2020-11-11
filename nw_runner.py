@@ -4,7 +4,7 @@ from nw_products import NorthwindProducts  # Importing the class we want to run 
 class Runner(NorthwindProducts):
     # We only need to run the avg_val() method so lets return what's returned from the avg_val() method
     def run_avg_val(self):
-        return super().avg_val()
+        return self.avg_val()
 
 
 # Creating an instance and running our method

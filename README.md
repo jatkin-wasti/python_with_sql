@@ -1,5 +1,5 @@
 # Python with SQL
-![Python and SQL](./SQL_diagram.png)
+![Python and SQL](SQL_diagram.PNG)
 ## Using PYODBC to connect to SQL from our python program
 - Python Open Database Connectivity
 - 
